@@ -2,11 +2,17 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  // create a state object to hold the properties of the inputs:
+  const [books, setBooks] = useState([]);
 
-  
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [isbn, setIsbn] = useState("");
+
+  const handleAddBook = (e) => {
+    e.preventDefault();
+    
+  }
   
   return (
     <div className="wrapper">
@@ -14,7 +20,7 @@ function App() {
       <p>Add and View your books using local storage</p>
       <div className='main md:flex mt-8 items-center'>
         <div className='form-container'>
-          <form  className='form-group'>
+          <form  className='form-group' onSubmit={handleAddBook}>
             <label>Title</label>
             <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} className="form-control" required />
             <br /><br />
