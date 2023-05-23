@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Views from './components/Views';
+import DeleteIcon from "./assests/icons/delete.svg";
 
 function App() {
 
@@ -79,8 +80,9 @@ function App() {
             </table>
           </div>
           {books.length < 1 && <div className='py-4'>No books added yet</div>}
-          <div className='text-center bg-red-700 hover:bg-red-400 text-white'>
-            <button onClick={()=> setBooks([])}>Remove ALl Books</button>
+          <div className='text-center bg-red-700 hover:bg-red-400 text-white rounded'>
+            <button onClick={()=> setBooks([])} className="flex py-4 items-center justify-center"> 
+            <img src={DeleteIcon} alt="DeleteIcon" />Remove ALl Books</button>
           </div>
         </div>
       </div>
